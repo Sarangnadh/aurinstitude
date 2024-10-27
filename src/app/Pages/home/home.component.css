@@ -41,13 +41,18 @@
   
   .hero-button {
     background-color: #ff5722;
-    border: 20px;
+    border: none;
+    border-radius: 50px; 
     color: white;
     padding: 10px 20px;
     margin: 10px;
     cursor: pointer;
+    transition: background-color 0.3s;
   }
   
+.hero-button:hover {
+  background-color: #e64a19; /* Optional: darker shade on hover */
+}
   /* Courses Section */
   .courses {
     padding: 50px;
