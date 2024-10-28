@@ -53,26 +53,48 @@
 .hero-button:hover {
   background-color: #e64a19; /* Optional: darker shade on hover */
 }
-  /* Courses Section */
+  
   .courses {
-    padding: 50px;
-    background-color: #f4f4f4;
-  }
-  
-  .course-grid {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .course-item {
+    padding: 50px 20px;
+    background-color: #f8f8f8;
     text-align: center;
-  }
-  
-  .course-item img {
+}
+
+.courses h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.course-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    gap: 20px;
+}
+
+.course-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+.course-item img {
     width: 100%;
-    max-width: 300px;
     height: auto;
-  }
+    border-radius: 10px;
+}
+
+.course-item h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.course-item p {
+    font-size: 1rem;
+    color: #555;
+}
   
   /* Future Hopes */
   .future-hopes {
@@ -87,9 +109,23 @@
   
   /* Relationship Section */
   .relationship {
-    padding: 50px;
+    padding: 50px 20px;
     background-color: #f4f4f4;
     text-align: center;
+  }
+  
+  .relationship-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .relationship-content img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
   }
   
   /* College Vibes Section */
@@ -182,4 +218,64 @@
 .activity-item:hover {
   color: lightcyan;
   transform: translateY(-5px); /* Lift effect on hover */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .relationship-content {
+      padding: 20px;
+  }
+
+  .relationship h2 {
+      font-size: 1.8rem;
+  }
+
+  .relationship-content p {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .relationship-content {
+      padding: 15px;
+  }
+
+  .relationship h2 {
+      font-size: 1.5rem;
+  }
+
+  .relationship-content p {
+      font-size: 0.9rem;
+  }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .courses h2 {
+        font-size: 2rem;
+    }
+
+    .course-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .course-item p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .courses h2 {
+        font-size: 1.8rem;
+    }
+
+    .course-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .course-item p {
+        font-size: 0.9rem;
+    }
 }
