@@ -1,54 +1,118 @@
 .course-section {
-    background-color: #f5f5f5;
-    padding: 40px;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.course-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.course-section h5 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.col-md-3 {
+    flex: 1 1 300px;
+    max-width: 300px;
 }
 
 .course-card {
     background-color: #fff;
-    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 .course-card h3 {
-    font-size: 18px;
+    font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
 .course-card p {
-    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
 }
 
 .button-container {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space between buttons */
-    margin-top: 15px; /* Space above buttons */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
 }
 
-.enquire-btn,
-.join-btn {
-    padding: 10px 20px; /* Padding inside buttons */
-    color: white; /* Text color */
-    text-align: center; /* Center the text */
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth background color transition */
+.enquire-btn, .join-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
 }
 
 .enquire-btn {
-    background-color: #007bff; /* Blue background for Enquire Now */
+    background-color: #007bff;
 }
 
 .join-btn {
-    background-color: #28a745; /* Green background for Join Now */
+    background-color: #28a745;
 }
 
-/* Hover effects */
-.enquire-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .course-section h2 {
+        font-size: 2rem;
+    }
+
+    .course-section h5 {
+        font-size: 0.9rem;
+    }
+
+    .course-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .course-card p {
+        font-size: 0.95rem;
+    }
+
+    .enquire-btn, .join-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
 }
 
-.join-btn:hover {
-    background-color: #218838; /* Darker green on hover */
+@media (max-width: 480px) {
+    .course-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .course-section h5 {
+        font-size: 0.85rem;
+    }
+
+    .course-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .course-card p {
+        font-size: 0.85rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
