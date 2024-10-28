@@ -5,7 +5,7 @@
     <div class="hero-text">
       <h1>Where Creativity Meets Innovation</h1>
       <p>Shaping the Future of Interior Design & Fashion with Hands-on Learning.</p>
-      <button class="hero-button">Explore Courses</button>
+      <button class="hero-button" (click)="exploreCourses()">Explore Courses</button>
       <button class="hero-button">Learn More</button>
     </div>
   </section>
@@ -54,17 +54,40 @@
        alt="Student and Teacher Relationship">
     </div>
   </section>
-  
-  <!-- College Culture, Programs & Activities Section -->
+
+    <!-- College Culture, Programs & Activities Section -->
+
   <section class="culture-activities">
-    <h2>Life at AURA</h2>
-    <div class="carousel">
-        
-       
+    <h2 style="color: lightgoldenrodyellow;">Life at AURA</h2>
+    <h4  style="color: lightblue;">Our vibrant campus culture offers a balance between education and extracurricular activities.</h4>
+
+    <div class="activity-grid">
+        <div class="activity-item">
+            <img src="https://www.ctuniversity.in/images/events/all-events-bg.jpg" alt="Cultural Event 1">
+            <h3>Cultural Fest</h3>
+            <p>Join us for an annual cultural fest featuring performances, art exhibitions, and more!</p>
+        </div>
+        <div class="activity-item">
+            <img src="https://inift.com/wp-content/uploads/2021/07/INIFT-acting-course-in-kolkata.jpg" alt="Workshop 1">
+            <h3>Design Workshops</h3>
+            <p>Hands-on workshops led by industry professionals to enhance your design skills.</p>
+        </div>
+        <div class="activity-item">
+            <img src="https://images.shiksha.com/mediadata/images/1631621938phpKNlpfU.jpeg" alt="Fashion Show">
+            <h3>Fashion Show</h3>
+            <p>Showcase your creativity in our annual fashion show featuring student designs.</p>
+        </div>
+        <div class="activity-item">
+            <img src="https://www.collegetransitions.com/wp-content/uploads/2023/06/blog-100ExamplesCommunityServiceProjects-1460x822-1.webp" alt="Community Service">
+            <h3>Community Service</h3>
+            <p>Engage with the community through various service projects and outreach programs.</p>
+        </div>
     </div>
 
-    <p>Our vibrant campus culture offers a balance between education and extracurricular activities.</p>
-  </section>
+</section>
+
+  
+ 
   
   <!-- College Vibes Section -->
   <section class="vibes">
@@ -95,10 +118,18 @@
     </div>
 
 
-    <p>A welcoming, creative environment that encourages personal and professional growth.</p>
-    <video autoplay muted loop>
-      <source src="https://youtu.be/I1J2Z_Fgado?si=_lIs6B0RfFIg0doo" type="video/mp4">
-    </video>
+    <h4>A welcoming, creative environment that encourages personal and professional growth.</h4>
+    <div class="video-container">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/I1J2Z_Fgado?autoplay=1&mute=1&loop=1&playlist=I1J2Z_Fgado"
+        title="YouTube video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
   </section>
   
   <!-- Footer -->

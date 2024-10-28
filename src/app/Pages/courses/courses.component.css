@@ -1,0 +1,54 @@
+.course-section {
+    background-color: #f5f5f5;
+    padding: 40px;
+}
+
+.course-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.course-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    margin-bottom: 5px;
+}
+
+.button-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between buttons */
+    margin-top: 15px; /* Space above buttons */
+}
+
+.enquire-btn,
+.join-btn {
+    padding: 10px 20px; /* Padding inside buttons */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.enquire-btn {
+    background-color: #007bff; /* Blue background for Enquire Now */
+}
+
+.join-btn {
+    background-color: #28a745; /* Green background for Join Now */
+}
+
+/* Hover effects */
+.enquire-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.join-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
