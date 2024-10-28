@@ -1,22 +1,74 @@
-.nav-link{
-    color: rgb(46, 46, 239);
-}
-.nav-link:hover {
-    color: #007bff;
-}
-.navbar{
-    height: 160px;
-}
+/* Logo and Navbar adjustments */
 .navbar {
-    background-color: #f8f9fa; /* Light background */
+  height: auto;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.navbar img {
+  height: 100px;
+  width: 100px;
+}
+
+/* Adjust navbar brand text for smaller screens */
+@media (max-width: 992px) {
+  .navbar img {
+    height: 80px;
+    width: 80px;
   }
-  
-  .nav-link {
-    color: #007bff; /* Bootstrap link color */
-    font-size: large;
-    
+
+  .navbar-brand {
+    font-size: 0.8rem;
   }
-  
-  .nav-link:hover {
-    color: #0056b3; /* Darker on hover */
+}
+
+/* Adjust font sizes and layout for small and extra small screens */
+@media (max-width: 768px) {
+  .navbar img {
+    height: 60px;
+    width: 60px;
   }
+
+  .navbar-brand {
+    font-size: 0.7rem;
+    white-space: normal;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Link Colors */
+.nav-link {
+  color: rgb(46, 46, 239);
+  font-size: 1.1rem;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Background color change for navbar */
+.navbar {
+  background-color: #f8f9fa; /* Light background */
+}
+
+.navbar-dark .navbar-toggler {
+  color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Make the navbar collapse properly for mobile screens */
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+/* Adjust hover color for better visibility */
+.nav-link:hover {
+  color: #0056b3;
+}
