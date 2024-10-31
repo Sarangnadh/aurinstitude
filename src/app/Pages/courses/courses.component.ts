@@ -67,17 +67,16 @@ export class CoursesComponent implements OnInit {
     //   Eligibility:" ",
     //   desaiif:"Value added programs from AIIF"
     // },
-    // {
-    //   id:9,
-    //   courseName:"",
-    //   Duration:"",
-    //   Eligibility:" ",
-    //   desaiif:"Value added programs from AIIF"
-    // },
+   
   ]
   constructor(private router: Router) { }
   ngOnInit(): void {
 
+  }
+  enquireconfirm()
+  {
+    this.router.navigate([''])
+    alert("Your Response is recorded.We will contact you very Soon")
   }
 
 }
