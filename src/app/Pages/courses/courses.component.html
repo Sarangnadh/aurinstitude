@@ -44,18 +44,18 @@
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" required>
                   </div>
+                  <div class="mb-3">
+                    <label for="course" class="form-label">Course Interested In</label>
+                    <select class="form-control" id="course"  required>
+                      <option value="" disabled selected>Select a course</option>
+                      <option *ngFor="let course of courses" [value]="course.courseName">
+                        {{ course.courseName }}
+                      </option>
+                    </select>
+                  </div>
                  
-                  <select class="input1" id="course" name="course">
-                    <option value="Course Interested In">Course Interested In</option>
-                    <option value="BSc Interior Design">BSc Interior Design </option>
-                    <option value="B.Des in Interior Design">B.Des in Interior Design</option>
-                    <option value="PG Diploma in Interior Design &amp; Space Management">PG Diploma in Interior Design &amp; Space Management</option>
-                    <option value="Diploma in Interior Design &amp; Space Management">Diploma in Interior Design &amp; Space Management</option>
-                    <option value="MDes Furniture &amp; Interior Design">MDes Furniture &amp; Interior Design</option>
-                    <option value="BSc Costume Design &amp; Fashion">BSc Costume Design &amp; Fashion</option>
-                    <option value="Advanced Diploma in Fashion Design &amp; Boutique Management">Advanced Diploma in Fashion Design &amp; Boutique Management</option>
-                 
-                  </select>
+                    
+              
               </form>
         </div>
         <div class="modal-footer">
@@ -80,11 +80,10 @@
                 <p><strong>Online Batches:</strong> Currently, we are offering online batches for all courses. Classes will be conducted via Zoom every Saturday from 10 AM to 12 PM.</p>
                 <p><strong>Offline Batches:</strong> Offline batches will be available from next month at our campus. Classes will be held at Monday to Friday from 9 AM to 4PM.</p>
                 <p><strong>Next Batch Start Date:</strong> The next batch will commence on <strong>November 25, 2024</strong>. Registration is open until November 10, 2024.</p>
-                <p>If you have any questions regarding the courses or registration process, feel free to contact us!</p>                 
+                <p>If you have any questions regarding the courses or registration process, feel free to <a href="\contact">contact us!</a></p>                 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary">Submit</button> -->
         </div>
       </div>
     </div>
