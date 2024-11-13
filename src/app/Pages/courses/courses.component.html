@@ -1,90 +1,87 @@
 <section class="course-section">
-    <h2>Courses & Certification</h2>
-    <h5>AIIF provides Degree and Diploma Certifications from Government Universities which are UGC Approved, NAAC Accredited with A Grade and having Top Positions in National Ranking.</h5>
+  <h2>Courses & Certification</h2>
+  <h5>AIIF provides Degree and Diploma Certifications from Government Universities which are UGC Approved, NAAC Accredited with A Grade and having Top Positions in National Ranking.</h5>
 
-    <div class=" container">
-        <div class="col-md-3"*ngFor="let data of courses">
-            <div class="course-card" >
-                <h3>{{data.courseName}}</h3>
-                <p>{{data.desaiif}}</p>
-                <p>Duration:{{data.Duration}} </p>
-                <p>Eligibility:{{data.Eligibility}}</p>
-                <div class="button-container">
-                    <a href="#" class="enquire-btn" data-bs-toggle="modal"  data-bs-target="#enquireform">Enquire Now</a>
-                    <a href="#" class="join-btn"  data-bs-toggle="modal" data-bs-target="#joininfo">Join Now</a>
-                </div>
-            </div>               
-        </div>  
+  <div class="container">
+    <div class="col-md-3" *ngFor="let data of courses">
+      <div class="course-card">
+        <h3>{{data.courseName}}</h3>
+        <p>{{data.desaiif}}</p>
+        <p>Duration: {{data.Duration}}</p>
+        <p>Eligibility: {{data.Eligibility}}</p>
+        <div class="button-container">
+          <a href="#" class="enquire-btn" data-bs-toggle="modal" data-bs-target="#enquireform">Enquire Now</a>
+          <a href="#" class="join-btn" data-bs-toggle="modal" data-bs-target="#joininfo">Join Now</a>
+        </div>
+      </div>
     </div>
-   
+  </div>
+</section>
 
-    </section>
-
-
-    <!-- Enquire Modal -->
-
+<!-- Enquire Modal -->
 <div class="modal fade" id="enquireform" tabindex="-1" aria-labelledby="enquireLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Enquire Now</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form>
-                <div class="mb-3">
-                  <label for="name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="mb-3">
-                  <label for="mobno" class="form-label">Mobile Number</label>
-                  <input type="mobno" class="form-control" id="mobno" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="course" class="form-label">Course Interested In</label>
-                    <select class="form-control" id="course"  required>
-                      <option value="" disabled selected>Select a course</option>
-                      <option *ngFor="let course of courses" [value]="course.courseName">
-                        {{ course.courseName }}
-                      </option>
-                    </select>
-                  </div>
-                 
-                    
-              
-              </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  (click)="enquireconfirm()">Submit</button>
-        </div>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enquire Now</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="enquiryform" (ngSubmit)="enquireconfirm()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" id="name" required>
+          </div>
+          <div *ngIf="this.enquiryform.get('name')?.errors&&this.enquiryform.get('name')?.touched " style="color:red;">Please Enter the Name Properly!</div>
+
+          <div class="mb-3">
+            <label for="mobno" class="form-label">Mobile Number</label>
+            <input type="tel" class="form-control" formControlName="mobno" id="mobno" required>
+          </div>
+          <div *ngIf="this.enquiryform.get('mobno')?.errors&&this.enquiryform.get('mobno')?.touched " style="color:red;">Please Enter the correct Number</div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email" id="email" required>
+          </div>
+          <div *ngIf="this.enquiryform.get('email')?.errors&&this.enquiryform.get('email')?.touched " style="color:red;">Please Enter the correct Email</div>
+
+          <div class="mb-3">
+            <label for="course" class="form-label">Course Interested In</label>
+            <select class="form-control" formControlName="course" id="course" required>
+              <option value="" disabled selected>Select a course</option>
+              <option *ngFor="let course of courses" [value]="course.courseName">{{ course.courseName }}</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  (click)="enquireconfirm()">Submit</button>
+          </div>
+       
+        </form>
       </div>
     </div>
   </div>
+</div>
 
-
-  <!-- JoinModal -->
-  <div class="modal fade" id="joininfo" tabindex="-1" aria-labelledby="enquireLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Join Now</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-      <h5>Batch Information</h5>
-                <p><strong>Online Batches:</strong> Currently, we are offering online batches for all courses. Classes will be conducted via Zoom every Saturday from 10 AM to 12 PM.</p>
-                <p><strong>Offline Batches:</strong> Offline batches will be available from next month at our campus. Classes will be held at Monday to Friday from 9 AM to 4PM.</p>
-                <p><strong>Next Batch Start Date:</strong> The next batch will commence on <strong>November 25, 2024</strong>. Registration is open until November 10, 2024.</p>
-                <p>If you have any questions regarding the courses or registration process, feel free to <a href="\contact">contact us!</a></p>                 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+<!-- Join Modal -->
+<div class="modal fade" id="joininfo" tabindex="-1" aria-labelledby="enquireLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Join Now</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Batch Information</h5>
+        <p><strong>Online Batches:</strong> Currently, we are offering online batches for all courses. Classes will be conducted via Zoom every Saturday from 10 AM to 12 PM.</p>
+        <p><strong>Offline Batches:</strong> Offline batches will be available from next month at our campus. Classes will be held Monday to Friday from 9 AM to 4 PM.</p>
+        <p><strong>Next Batch Start Date:</strong> The next batch will commence on <strong>November 25, 2024</strong>. Registration is open until November 10, 2024.</p>
+        <p>If you have any questions regarding the courses or registration process, feel free to <a href="\contact">contact us!</a></p>                 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>
